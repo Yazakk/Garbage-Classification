@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<!DOCTYPE html>
+<html>
+<head>
+  <center><h1>Detection of Waste Using Deep Learning</h1></center>
+</head>
+<body>
+
+<div class='divform'>
+	<center><h2>Upload Image or Enter URL</h2></center>
+
+
+<form action='upload' method="post" enctype="multipart/form-data">
+<label for="file-upload" class="custom-file-upload">
+      Upload Image
+</label>
+{% csrf_token %}
+<input id="file-upload" type="file" name="image"/>
+<input type="submit" class="custom-file-button">
+</form>
+
+
+
+<br>
+
+</div>
+
+
+<center>	
+	<h3><center> Display Result </center></h3>
+
+
+<br>
+
+
+
+  <h2 style='color:red;'>  {{ pred }}</h2>
+  <br>
+
+
+  <h3><center> Display Image </center></h3>
+
+<img src="{{url}}" ,width="500" height="400">
+</center>	
+
+
+<style>
+.spacing {
+    -webkit-column-count: 2;
+}
+
+.spacing_pre {
+    -webkit-column-count: 5;
+}
+
+</style>
+</head>
+
+<h3> <center>Model Performance </center></h3>
+<table class="table">>
+<thead>
+  <tr>
+    <th class="spacing_pre">Waste</th>
+    <th class="spacing"> Precision</th>
+    <th class="spacing">Recall</th>
+    <th class="spacing">F1-score</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+<br>
+
+    <td>Basal Cell Carcinoma (BCC)</td>
+    <td>93%</td>
+    <td>96%</td>
+    <td>95%</td>
+  </tr>
+  <tr>
+    <td>Actinic Keratosis (ACK)</td>
+    <td>93%</td>
+    <td>87%</td>
+    <td>90%</td>
+  </tr>
+  <tr>
+    <td>Nevus (NEV)</td>
+    <td>92%</td>
+    <td>92%</td>
+    <td>92%</td>
+  </tr>
+  <tr>
+    <td>Seborrheic Keratosis (SEK)</td>
+    <td>93%</td>
+    <td>97%</td>
+    <td>95%</td>
+  </tr>
+  <tr>
+    <td>Squamous Cell Carcinoma (SCC)</td>
+    <td>88%</td>
+    <td>93%</td>
+    <td>90%</td>
+  </tr>
+  <tr>
+    <td>Melanoma (MEL)</td>
+    <td>89%</td>
+    <td>71%</td>
+    <td>79%</td>
+  </tr>
+  <tr>
+    <td>Macro Average</td>
+    <td>91%</td>
+    <td>89%</td>
+    <td>90%</td>
+  </tr>
+  <tr>
+    <td>Weighted Average</td>
+    <td>92%</td>
+    <td>92%</td>
+    <td>92%</td>
+  </tr>
+  <tr>
+    <td>Accuracy</td>
+    <td colspan="3">92%</td>
+  </tr>
+</tbody>
+</table>
+
+
+</body>
+</html>
+
